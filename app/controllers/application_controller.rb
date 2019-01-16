@@ -45,12 +45,12 @@ class ApplicationController < ActionController::API
   include ActionController::Serialization
 
   # return 404 for failed search by id
-  rescue_from ActiveRecord::RecordNotFound, with: :record_not_found
+  rescue_from Mongoid::Errors::DocumentNotFound, with: :record_not_found
   def record_not_found
     render json: { error: { message: 'Not Found' } }, status: :not_found
   end
 
   # Restrict visibility of these methods
-  private :authenticate, :current_user, :set_current_user, :record_not_found
+  private :authenticate, :current_user, :set_current_user
   private :ssl_configured?, :api_request_settings
 end

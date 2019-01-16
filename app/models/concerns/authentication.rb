@@ -3,7 +3,6 @@
 #
 module Authentication
   extend ActiveSupport::Concern
-
   #
   module ClassMethods
     def authenticate(email, password)
@@ -34,7 +33,7 @@ module Authentication
 
   # unconditionally create and set a new token
   def new_token
-    update_columns(token: set_token, updated_at: Time.current)
+    update_document(token: set_token, updated_at: Time.current)
   end
 
   # expire old token

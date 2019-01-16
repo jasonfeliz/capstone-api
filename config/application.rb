@@ -6,7 +6,7 @@ require 'rails'
 # Pick the frameworks you want:
 require 'active_model/railtie'
 # require 'active_job/railtie'
-require 'active_record/railtie'
+# require 'active_record/railtie'
 require 'action_controller/railtie'
 # require 'action_mailer/railtie'
 # require 'action_view/railtie'
@@ -40,8 +40,8 @@ module RailsApiTemplate
     # A call such as Patient.all is required to connect to the database.
     #
     # Overriding to  establish a connection to the database when in the console
-    console do
-      ActiveRecord::Base.connection
-    end
+    # console do
+    #   ActiveRecord::Base.connection
+    # end
   end
 end
