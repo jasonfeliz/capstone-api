@@ -1,7 +1,6 @@
 production:
     default:
       uri: <%= ENV['MONGODB_URI'] %>
-        hosts: <%= ENV['MONGODB_URI'].host %>:<%= ENV['MONGODB_URI'].port %>
       options:
         skip_version_check: true
         safe: true
