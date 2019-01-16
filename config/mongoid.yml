@@ -1,11 +1,10 @@
-<% if ENV['MONGODB_URI'] %>
-  production:
-      default:
-        uri: <%= ENV['MONGODB_URI'] %>
-        options:
-          skip_version_check: true
-          safe: true
-<% end %>
+production:
+    default:
+      uri: <%= ENV['MONGODB_URI'] %>
+        hosts: <%= ENV['MONGODB_URI'].host %>:<%= ENV['MONGODB_URI'].port %>
+      options:
+        skip_version_check: true
+        safe: true
 
 development:
   # Configure available database clients. (required)
