@@ -1,6 +1,5 @@
-class JobSeekerSerializer < ActiveModel::Serializer
-  attributes :id, :user, :job_title, :skills, :about_me, :location, :code_wars_username,
-              :code_wars_api_key, :resume_link, :linkedin_link, :github_link
+class EmployerSerializer < ActiveModel::Serializer
+  attributes :id, :user, :company_link, :company_name,:company_description
 
   def user
     {

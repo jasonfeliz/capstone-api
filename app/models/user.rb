@@ -15,11 +15,9 @@ class User
   field :password_digest, type: String
   index({ token: 1 }, { unique: true })
 
-  validates :first_name, presence: true
-  validates :last_name, presence: true
-  validates :user_type, presence: true
-
+  validates_presence_of :first_name, :last_name, :user_type
 
   # relationships
   has_many :job_seekers
+  has_many :employers
 end
