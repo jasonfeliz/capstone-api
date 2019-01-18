@@ -3,7 +3,7 @@ class JobSeekersController < ApplicationController
 
   # GET /job_seekers
   def index
-    @job_seekers = JobSeeker.all.order(created_at: :desc)
+    @job_seekers = JobSeeker.all.order(updated_at: :desc)
 
     render json: @job_seekers
   end
