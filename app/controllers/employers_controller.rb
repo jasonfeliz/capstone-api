@@ -1,4 +1,4 @@
-class EmployersController < OpenReadController
+class EmployersController < ApplicationController
   before_action :set_employer, only: [:show, :update, :destroy]
 
   # GET /employers
