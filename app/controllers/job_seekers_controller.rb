@@ -1,4 +1,4 @@
-class JobSeekersController < ApplicationController
+class JobSeekersController < OpenReadController
   before_action :set_job_seeker, only: [:update, :destroy]
 
   # GET /job_seekers

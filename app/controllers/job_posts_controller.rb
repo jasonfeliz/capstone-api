@@ -1,4 +1,4 @@
-class JobPostsController < ApplicationController
+class JobPostsController < OpenReadController
   before_action :set_job_post, only: [:show, :update, :destroy]
 
   # GET /job_posts
