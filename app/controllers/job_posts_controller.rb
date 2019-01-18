@@ -3,7 +3,7 @@ class JobPostsController < ApplicationController
 
   # GET /job_posts
   def index
-    @job_posts = JobPost.all
+    @job_posts = JobPost.all.order(created_at: :desc)
 
     render json: @job_posts
   end
@@ -16,7 +16,6 @@ class JobPostsController < ApplicationController
   # POST /job_posts
   def create
     @job_post = JobPost.new(job_post_params)
-    @job_post.push(desired_skills: ['awesome','php'] )
     if @job_post.save
       render json: @job_post, status: :created, location: @job_post
     else
@@ -46,6 +45,6 @@ class JobPostsController < ApplicationController
 
     # Only allow a trusted parameter "white list" through.
     def job_post_params
-      params.require(:job_post).permit(:employer_id,:job_title,:job_description,:desired_skills)
+      params.require(:job_post).permit(:user_id,:job_title,:job_description,:desired_skills)
     end
 end

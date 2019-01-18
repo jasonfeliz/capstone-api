@@ -6,9 +6,10 @@ curl "http://localhost:4741/job_posts" \
   --header "Content-Type: application/json" \
   --data '{
     "job_post": {
-      "employer_id": "'"${UI}"'",
+      "employer_id": "'"${ID}"'",
       "job_title": "'"${CN}"'",
-      "job_description": "'"${CD}"'"
+      "job_description": "'"${CD}"'",
+      "desired_skills": ["'"awesome"'", "'"php"'"]
     }
   }'
 

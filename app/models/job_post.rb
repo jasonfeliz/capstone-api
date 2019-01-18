@@ -8,7 +8,7 @@ class JobPost
   field :desired_skills, type:Array
 
   # relationships
-  belongs_to :employer
+  belongs_to :user
 
   #validations
   validates_presence_of :job_title, :job_description

@@ -1,15 +1,16 @@
 class JobSeekersController < ApplicationController
-  before_action :set_job_seeker, only: [:show, :update, :destroy]
+  before_action :set_job_seeker, only: [:update, :destroy]
 
   # GET /job_seekers
   def index
-    @job_seekers = JobSeeker.all
+    @job_seekers = JobSeeker.all.order(created_at: :desc)
 
     render json: @job_seekers
   end
 
   # GET /job_seekers/1
   def show
+    @job_seeker = JobSeeker.where(user_id: params[:id])
     render json: @job_seeker
   end
 

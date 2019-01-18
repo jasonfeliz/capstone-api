@@ -20,4 +20,5 @@ class User
   # relationships
   has_many :job_seekers
   has_many :employers
+  has_many :job_posts
 end
