@@ -35,8 +35,12 @@ Goals
 ## Unsolved Problems/Future Iterations
 * Let job seekers apply to jobs directly through the app
 * Give employers the option to email job seekers(Keep spam emails in mind)
-* let job seekers connect their account to HackerRank and show of challenges and scores
-* Build a robust job search engine. 
+* let job seekers connect their account to HackerRank and Codewars and show of challenges and scores
+* Build a robust job search engine.
+* Let Job Seekers upload resume to app
+* Let job seekers search for jobs in a given location
+* Let job seekers apply for jobs with a single click
+* Let job seekers look at jobs they have applied for
 
 
 ## API
@@ -126,7 +130,6 @@ This API has two main resources, surveys and responses. They are one-to-many.
 * As a company, I will be able to delete job posts
 * As a company, I will be able to get all of my job posts
 * As a company, I will be able to browse job seeker's profiles
-* As a company, I will be able to see the job seeker’s CodeWars challenges or Kata
 
 ### Job Seeker
 * As a Job Seeker, I will be able to sign up
@@ -134,12 +137,9 @@ This API has two main resources, surveys and responses. They are one-to-many.
 * As a Job Seeker, I will be able to change password
 * As a Job Seeker, I will be able to sign out
 * As a Job Seeker, I will be able to create a profile
-* As a Job Seeker, I will be able to connect my profile to a CodeWars account, if I have one
-* As a Job Seeker, I will be able to to upload my resume to my profile
 * As a Job Seeker, I will be able to edit my profile
-* As a Job Seeker, I will be able to search for jobs in a given location
-* As a Job Seeker, I will be able to apply for jobs with a single click
-* As a Job Seeker, I will be able to look at the jobs I have applied for
+* As a Job Seeker, I will be able to look at the jobs I have bookmarked
+* As a Job Seeker, I will be able to remove bookmarks on jobs 
 
 ## Wire Frames
 ![alt text](https://i.imgur.com/aMQIQ0D.jpg "Logo Title Text 1")
