@@ -15,4 +15,9 @@ class JobSeeker
 
   #relationships
   belongs_to :user
+  has_many :bookmarks
+
+  def job_posts
+    JobPost.in(id: bookmarks.pluck(:job_post_id))
+  end
 end

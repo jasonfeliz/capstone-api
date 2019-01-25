@@ -9,6 +9,13 @@ class JobPost
 
   # relationships
   belongs_to :user
+  has_many :bookmarks
+
+  def job_seekers
+    JobSeeker.in(id: bookmarks.pluck(:job_seeker_id))
+  end
+
+
 
   #validations
   validates_presence_of :job_title, :job_description

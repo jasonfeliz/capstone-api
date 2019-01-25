@@ -1,12 +1,13 @@
 class BookmarksController < ApplicationController
   before_action :set_bookmark, only: [:show, :update, :destroy]
 
-  # GET /bookmarks
+  # GET /bookmarks -- only get all bookmarks for signed in user using token
   def index
-    @bookmarks = Bookmark.all
-
+    # @bookmarks = Bookmark.all.order(created_at: :desc)
+    @bookmarks = Bookmark.all.where(token: bookmark_params[:token]).order(created_at: :desc)
     render json: @bookmarks
   end
+
 
   # GET /bookmarks/1
   def show
@@ -46,6 +47,6 @@ class BookmarksController < ApplicationController
 
     # Only allow a trusted parameter "white list" through.
     def bookmark_params
-      params.fetch(:bookmark, {})
+      params.require(:bookmark).permit(:token,:job_seeker_id,:job_post_id)
     end
 end
