@@ -45,7 +45,7 @@ Goals
 
 ## API
 
-This API has two main resources, surveys and responses. They are one-to-many.
+This API has 4 main resources, Job Posts, Job Seekers and Employers. 
 ### Authentication
 
 | Verb   | URI Pattern
@@ -139,7 +139,7 @@ This API has two main resources, surveys and responses. They are one-to-many.
 * As a Job Seeker, I will be able to create a profile
 * As a Job Seeker, I will be able to edit my profile
 * As a Job Seeker, I will be able to look at the jobs I have bookmarked
-* As a Job Seeker, I will be able to remove bookmarks on jobs 
+* As a Job Seeker, I will be able to remove bookmarks on jobs
 
 ## Wire Frames
 ![alt text](https://i.imgur.com/aMQIQ0D.jpg "Logo Title Text 1")
