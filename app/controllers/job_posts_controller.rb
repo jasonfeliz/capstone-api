@@ -8,6 +8,13 @@ class JobPostsController < ApplicationController
     render json: @job_posts
   end
 
+  # get users job posts
+  #GET /my_job_posts/:id
+  def my_job_posts
+    @my_job_posts = JobPost.all.where(user_id: params[:id]).order(updated_at: :desc)
+    render json: @my_job_posts
+  end
+
   # GET /job_posts/1
   def show
     render json: @job_post
@@ -36,6 +43,7 @@ class JobPostsController < ApplicationController
   def destroy
     @job_post.destroy
   end
+
 
   private
     # Use callbacks to share common setup or constraints between actions.
