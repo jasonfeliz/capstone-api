@@ -4,7 +4,7 @@ class BookmarksController < ApplicationController
   # GET /bookmarks -- only get all bookmarks for signed in user using token
   def index
     # @bookmarks = Bookmark.all.order(created_at: :desc)
-    @bookmarks = Bookmark.all.where(token: bookmark_params[:token]).order(created_at: :desc)
+    @bookmarks = Bookmark.all.where(user_id: params[:id]).order(created_at: :desc)
     render json: @bookmarks
   end
 
