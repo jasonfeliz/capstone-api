@@ -46,10 +46,11 @@ class JobSeekersController < ApplicationController
     end
 
     # Only allow a trusted parameter "white list" through.
+
     def job_seeker_params
       params.require(:job_seeker)
             .permit(:user_id, :skills, :about_me, :job_title, :location, :resume_link,
             :code_wars_username, :code_wars_api_key, :linkedin_link,
-          :github_link)
+          :github_link, :bootcamp)
     end
 end

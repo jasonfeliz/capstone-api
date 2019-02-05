@@ -12,6 +12,7 @@ class JobSeeker
   field :code_wars_api_key, type:String
   field :linkedin_link, type:String
   field :github_link, type:String
+  field :bootcamp, type:String
 
   #relationships
   belongs_to :user
