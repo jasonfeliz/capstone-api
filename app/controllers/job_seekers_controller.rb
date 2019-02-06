@@ -8,6 +8,21 @@ class JobSeekersController < ApplicationController
     render json: @job_seekers
   end
 
+  def browse
+    if(job_seeker_params[:job_title] == '' && job_seeker_params[:bootcamp] == '')
+      index
+    elsif (job_seeker_params[:job_title] != '' && job_seeker_params[:bootcamp] != '')
+      @job_seekers = JobSeeker.where(job_title: job_seeker_params[:job_title], bootcamp: job_seeker_params[:bootcamp]).all.order(updated_at: :desc)
+      render json: @job_seekers
+    elsif (job_seeker_params[:job_title] != '' && job_seeker_params[:bootcamp] != '')
+      @keys = job_seeker_params.keys
+      @value =
+      @job_seekers = JobSeeker.where(job_title: job_seeker_params[:job_title]).all.order(updated_at: :desc)
+      render json: @job_seekers
+    end
+
+  end
+
   # GET /job_seekers/1
   def show
     @job_seeker = JobSeeker.where(user_id: params[:id])

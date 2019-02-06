@@ -1,5 +1,5 @@
 class JobSeekerSerializer < ActiveModel::Serializer
-  attributes :id, :user, :job_title, :skills, :about_me, :location, :code_wars_username,
+  attributes :id, :user, :job_title,:bootcamp, :skills, :about_me, :location, :code_wars_username,
               :code_wars_api_key, :resume_link, :linkedin_link, :github_link
 
   def user
