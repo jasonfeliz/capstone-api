@@ -9,7 +9,7 @@ class JobPost
 
   # relationships
   belongs_to :user
-  has_many :bookmarks
+  has_many :bookmarks, dependent: :destroy
 
   def job_seekers
     JobSeeker.in(id: bookmarks.pluck(:job_seeker_id))

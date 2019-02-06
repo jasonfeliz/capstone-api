@@ -18,7 +18,7 @@ class User
   validates_presence_of :first_name, :last_name, :user_type
 
   # relationships
-  has_many :job_seekers
-  has_many :employers
-  has_many :job_posts
+  has_many :job_seekers, dependent: :destroy
+  has_many :employers, dependent: :destroy
+  has_many :job_posts, dependent: :destroy
 end
