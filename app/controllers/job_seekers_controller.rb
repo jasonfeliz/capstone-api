@@ -9,15 +9,24 @@ class JobSeekersController < ApplicationController
   end
 
   def browse
-    if(job_seeker_params[:job_title] == '' && job_seeker_params[:bootcamp] == '')
+    @valueArr = job_seeker_params.values
+    @countEmptyVal = @valueArr.select {|val| val == '' }.count
+
+    case @countEmptyVal
+
+    when  2
       index
-    elsif (job_seeker_params[:job_title] != '' && job_seeker_params[:bootcamp] != '')
-      @job_seekers = JobSeeker.where(job_title: job_seeker_params[:job_title], bootcamp: job_seeker_params[:bootcamp]).all.order(updated_at: :desc)
-      render json: @job_seekers
-    elsif (job_seeker_params[:job_title] != '' && job_seeker_params[:bootcamp] != '')
-      @keys = job_seeker_params.keys
-      @value =
-      @job_seekers = JobSeeker.where(job_title: job_seeker_params[:job_title]).all.order(updated_at: :desc)
+    when 1
+      job_seeker_params.keys.each do |val|
+        if(job_seeker_params[val] != '')
+          @job_seekers = JobSeeker.all.where("#{val}": job_seeker_params[val]).order(updated_at: :desc)
+          render json: @job_seekers
+        end
+      end
+    else
+      @job_seekers = JobSeeker.where(job_title: job_seeker_params[:job_title],
+                                     bootcamp: job_seeker_params[:bootcamp])
+                                     .all.order(updated_at: :desc)
       render json: @job_seekers
     end
 
