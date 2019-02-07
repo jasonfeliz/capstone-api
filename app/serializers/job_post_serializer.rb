@@ -1,5 +1,5 @@
 class JobPostSerializer < ActiveModel::Serializer
-  attributes :id, :user, :job_title, :job_description, :desired_skills
+  attributes :id, :user, :job_title, :job_description, :desired_skills, :created_at
 
   def user
     {
